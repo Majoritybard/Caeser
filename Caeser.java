@@ -1,18 +1,18 @@
 public class Caeser {
    private String Kt;
-    String gt="";
-    int S;
+    private String Gt;
+    private int S;
+
     public Caeser(){
         Kt="";
-
+        Gt="";
 
 
     }
-    public void verschlüsseln(){
+    public void verschlüsseln() {
 
-        for (int i=0;i<Kt.charat(i)){
-            gt.getchar(i)=(char)(Kt.char(i)+S)
-
+        for (int i = 0; i < Kt.length(); i++) {
+            Gt =Gt + (char) (Kt.charAt(i) + S);
         }
 
 
@@ -23,7 +23,7 @@ public class Caeser {
 
     }
     private int getASCII(char pWert){
-
+    return(int)pWert;
 
     }
 
@@ -39,13 +39,13 @@ public class Caeser {
     }
 
     private String getKt(){
-
+        return Kt;
 
     }
 
 
     private void setS(int pWert){
-
+    this.S=pWert;
 
     }
 
