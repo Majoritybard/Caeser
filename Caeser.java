@@ -6,24 +6,31 @@ public class Caeser {
     public Caeser(){
         Kt="";
         Gt="";
+        S=0;
 
 
     }
     public void verschlüsseln() {
-
+       Gt="";
         for (int i = 0; i < Kt.length(); i++) {
-            Gt =Gt + (char) (Kt.charAt(i) + S);
+            int h = this.getASCII(Kt.charAt(i));
+            Gt =Gt + this.getChar(h + S);
         }
 
 
     }
 
     private void entschlüsseln(){
+     Kt="";
+      for (int i=0;i<Gt.length();i++ ){
+          int h= this.getASCII(Gt.charAt(i));
+          Kt=Kt + this.getChar(h - S);
 
+      }
 
     }
     private int getASCII(char pWert){
-    return(int)pWert;
+    return pWert;
 
     }
 
@@ -38,14 +45,18 @@ public class Caeser {
 
     }
 
-    private String getKt(){
+    public String getKt(){
         return Kt;
 
     }
 
 
-    private void setS(int pWert){
+    public void setS(int pWert){
     this.S=pWert;
+
+    }
+    public String getGt(){
+        return Gt;
 
     }
 
