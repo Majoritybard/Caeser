@@ -1,4 +1,5 @@
 public class Caeser {
+
    private String Kt;
     private String Gt;
     private int S;
@@ -11,7 +12,7 @@ public class Caeser {
 
     }
     public void verschlüsseln() {
-       Gt="";
+        Gt="";
         for (int i = 0; i < Kt.length(); i++) {
             int h = this.getASCII(Kt.charAt(i));
             Gt =Gt + this.getChar(h + S);
@@ -20,7 +21,7 @@ public class Caeser {
 
     }
 
-    private void entschlüsseln(){
+    public void entschlüsseln(){
      Kt="";
       for (int i=0;i<Gt.length();i++ ){
           int h= this.getASCII(Gt.charAt(i));
@@ -59,5 +60,8 @@ public class Caeser {
         return Gt;
 
     }
+    public void setGt(String pWert){
+        this.Gt=pWert;
 
+    }
 }
