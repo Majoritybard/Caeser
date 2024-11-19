@@ -1,8 +1,8 @@
 public class Caeser {
 
-   private String Kt;
-    private String Gt;
-    private int S;
+        private String Kt;
+        private String Gt;
+        private int S;
 
     public Caeser(){
         Kt="";
