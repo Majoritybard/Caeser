@@ -12,22 +12,25 @@ public Veginere(){
 
 }
 public void verschlüsseln(){
-
+    Gt="";
 for (int i=0;i<Kt.length();i++){
- Kt="";
+
+    int c=this.buchstabenzuZahlen((S.charAt(i % S.length())));
     int h=this.buchstabenzuZahlen(Kt.charAt(i));
- int j=this.buchstabenzuZahlen(S.charAt(i%S.length()));
- Gt= Gt + this.zahlenZuBuchstaben(h+j);
+    int j = ((c - 97) % 26);
+    Gt= Gt + this.zahlenZuBuchstaben(h+j);
+    j=j+97;
 }
 }
 
 public void entschlüsseln(){
-  Gt="";
+  Kt="";
     for (int i=0;i<Gt.length();i++){
+       int c=this.buchstabenzuZahlen((S.charAt(i % S.length())));
        int h=this.buchstabenzuZahlen(Gt.charAt(i));
-       int j=this.buchstabenzuZahlen(S.charAt(i%S.length()));
+       int j=((c-26)%26);
        Kt=Kt + this.zahlenZuBuchstaben(h-j);
-
+       j=j+26;
     }
 
 }
