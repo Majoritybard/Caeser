@@ -3,7 +3,7 @@
  * Diese Methode verschlüsselt und entschlüsselt Text mithilfe einer Verschiebung (Shift-Wert).
  * Die Verschlüsselung verschiebt die Zeichen im Text um einen bestimmten Wert im Alphabet.
  */
-public class Caeser {
+public class Caeser extends Kryptomat {
 
     // Die Variable speichert den Klartext (unverschlüsselter Text)
     private String Kt;
@@ -57,18 +57,12 @@ public class Caeser {
      * @param pWert Das Zeichen, dessen ASCII-Wert ermittelt werden soll.
      * @return Der ASCII-Wert des übergebenen Zeichens.
      */
-    private int getASCII(char pWert) {
-        return pWert;  // Gibt den ASCII-Wert des Zeichens zurück
-    }
 
     /**
      * Gibt das Zeichen zurück, das dem übergebenen ASCII-Wert entspricht.
      * @param pWert Der ASCII-Wert, der in ein Zeichen umgewandelt werden soll.
      * @return Das Zeichen, das dem ASCII-Wert entspricht.
      */
-    private char getChar(int pWert) {
-        return (char) pWert;  // Wandelt den ASCII-Wert zurück in ein Zeichen um
-    }
 
     /**
      * Setzt den Klartext (`Kt`), der verschlüsselt oder entschlüsselt werden soll.
