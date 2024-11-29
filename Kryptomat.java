@@ -1,6 +1,6 @@
 public abstract class Kryptomat {
-    private String Gt;
-    private String Kt;
+    protected String Gt;
+    protected String Kt;
 
 
     public Kryptomat(){
@@ -36,4 +36,5 @@ public abstract class Kryptomat {
         return Kt;
 
     }
+
 }

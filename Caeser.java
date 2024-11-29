@@ -6,10 +6,7 @@
 public class Caeser extends Kryptomat {
 
     // Die Variable speichert den Klartext (unverschlüsselter Text)
-    private String Kt;
 
-    // Die Variable speichert den Geheimtext (verschlüsselter Text)
-    private String Gt;
 
     // Die Verschiebung, um die die Zeichen verschoben werden (Shift-Wert)
     private int S;
@@ -19,8 +16,6 @@ public class Caeser extends Kryptomat {
      * Initialisiert die Variablen `Kt` und `Gt` als leere Strings und `S` als 0.
      */
     public Caeser() {
-        Kt = "";   // Klartext ist anfangs leer
-        Gt = "";   // Geheimtext ist anfangs leer
         S = 0;     // Verschiebung ist anfangs 0
     }
 
@@ -34,7 +29,7 @@ public class Caeser extends Kryptomat {
         // Durchläuft jedes Zeichen des Klartexts und verschlüsselt es
         for (int i = 0; i < Kt.length(); i++) {
             int h = this.getASCII(Kt.charAt(i));  // Konvertiert das Zeichen in seinen ASCII-Wert
-            Gt = Gt + this.getChar((((h + S)-97)%26)+97);  // Verschiebt den ASCII-Wert und fügt das Ergebnis zum Geheimtext hinzu
+            Gt = Gt + this.getChar((((h + S) - 97) % 26) + 97);  // Verschiebt den ASCII-Wert und fügt das Ergebnis zum Geheimtext hinzu
         }
     }
 
@@ -42,13 +37,13 @@ public class Caeser extends Kryptomat {
      * Entschlüsselt den Geheimtext (`Gt`) mit der Caesar-Verschlüsselung und speichert das Ergebnis in `Kt`.
      * Jedes Zeichen des Geheimtexts wird um den Wert von `S` rückwärts verschoben.
      */
-    public void entschlüsseln() {
+    public void entschlüsseln () {
         Kt = "";  // Leert den Klartext vor der Entschlüsselung
 
         // Durchläuft jedes Zeichen des Geheimtexts und entschlüsselt es
         for (int i = 0; i < Gt.length(); i++) {
             int h = this.getASCII(Gt.charAt(i));  // Konvertiert das Zeichen in seinen ASCII-Wert
-            Kt = Kt + this.getChar((((h - S)-97)%26)+97);  // Verschiebt den ASCII-Wert rückwärts und fügt das Ergebnis zum Klartext hinzu
+            Kt = Kt + this.getChar((((h - S) - 97) % 26) + 97);  // Verschiebt den ASCII-Wert rückwärts und fügt das Ergebnis zum Klartext hinzu
         }  //-97)%25)+97) Verhindert, dass ein Wert außerhalb des kleinen Alphabets aufgeruft wird
     }
 
@@ -66,30 +61,18 @@ public class Caeser extends Kryptomat {
 
     /**
      * Setzt den Klartext (`Kt`), der verschlüsselt oder entschlüsselt werden soll.
+     *
      * @param pWert Der Klartext, der gesetzt werden soll.
      */
-    public void setKt(String pWert) {
-        this.Kt = pWert;  // Setzt den Klartext
-    }
 
-    /**
-     * Gibt den aktuellen Klartext (`Kt`) zurück.
-     * @return Der aktuelle Klartext.
-     */
-    public String getKt() {
-        return Kt;  // Gibt den Klartext zurück
-    }
 
-    /**
-     * Setzt die Verschiebung (`S`), die für die Verschlüsselung und Entschlüsselung verwendet wird.
-     * @param pWert Die Verschiebung, die gesetzt werden soll.
-     */
     public void setS(int pWert) {
         this.S = pWert;  // Setzt die Verschiebung
     }
 
     /**
      * Gibt die aktuelle Verschiebung (`S`) zurück.
+     *
      * @return Die aktuelle Verschiebung.
      */
     public int getS() {
@@ -100,16 +83,4 @@ public class Caeser extends Kryptomat {
      * Gibt den aktuellen Geheimtext (`Gt`) zurück.
      * @return Der aktuelle Geheimtext.
      */
-    public String getGt() {
-        return Gt;  // Gibt den Geheimtext zurück
-    }
-
-    /**
-     * Setzt den Geheimtext (`Gt`), der nach der Verschlüsselung oder Entschlüsselung resultiert.
-     * @param pWert Der Geheimtext, der gesetzt werden soll.
-     */
-    public void setGt(String pWert) {
-        this.Gt = pWert;  // Setzt den Geheimtext
-    }
-
 }
