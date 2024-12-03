@@ -8,7 +8,7 @@ public Veginere(){
 
 
 }
-public void verschlüsseln(){
+public void verschluesseln(){
     Gt="";
 for (int i=0;i<Kt.length();i++){
 
@@ -20,7 +20,7 @@ for (int i=0;i<Kt.length();i++){
 }
 }
 
-public void entschlüsseln(){
+public void entschluesseln(){
   Kt="";
     for (int i=0;i<Gt.length();i++){
        int c=this.getASCII((S.charAt(i % S.length())));

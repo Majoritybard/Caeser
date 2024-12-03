@@ -9,8 +9,8 @@ public abstract class Kryptomat {
 
     }
 
-    public abstract void verschlüsseln();
-    public abstract void entschlüsseln();
+    public abstract void verschluesseln();
+    public abstract void entschluesseln();
     public  char getChar(int pWert) {
         return (char) pWert;
     }

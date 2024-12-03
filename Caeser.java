@@ -23,7 +23,7 @@ public class Caeser extends Kryptomat {
      * Verschlüsselt den Klartext (`Kt`) mit der Caesar-Verschlüsselung und speichert das Ergebnis in `Gt`.
      * Jedes Zeichen des Klartexts wird um den Wert von `S` verschoben.
      */
-    public void verschlüsseln() {
+    public void verschluesseln() {
         Gt = "";  // Leert den Geheimtext vor der Verschlüsselung
 
         // Durchläuft jedes Zeichen des Klartexts und verschlüsselt es
@@ -37,7 +37,7 @@ public class Caeser extends Kryptomat {
      * Entschlüsselt den Geheimtext (`Gt`) mit der Caesar-Verschlüsselung und speichert das Ergebnis in `Kt`.
      * Jedes Zeichen des Geheimtexts wird um den Wert von `S` rückwärts verschoben.
      */
-    public void entschlüsseln () {
+    public void entschluesseln () {
         Kt = "";  // Leert den Klartext vor der Entschlüsselung
 
         // Durchläuft jedes Zeichen des Geheimtexts und entschlüsselt es
