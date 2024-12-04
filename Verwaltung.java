@@ -3,17 +3,18 @@ import java.util.Scanner;
 public class Verwaltung {
     private Scanner scanner;
     private Caeser caeser;
-   private Polybius polybius;
+    private Polybius polybius;
     private Veginere veginere;
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         new Verwaltung();
 
     }
+
     public Verwaltung() {
-        veginere= new Veginere();
-        caeser=new Caeser();
-        polybius= new Polybius();
+        veginere = new Veginere();
+        caeser = new Caeser();
+        polybius = new Polybius();
         scanner = new Scanner(System.in);
         while (true) {
             System.out.println("== HAUPTMENÜ ==");
@@ -21,6 +22,8 @@ public class Verwaltung {
             System.out.println("[2] Entschlüsseln (Entschlüsselt ein vom User angegebenes Wort)(Caeser)");
             System.out.println("[3] Verschlüsseln (Verschlüsselt ein vom User angegebenes Wort)(Viginere)");
             System.out.println("[4] Entschlüsseln (Entschlüsselt ein vom User angegebenes Wort)(Viginere)");
+            System.out.println("[5] Verschlüsseln (Verschlüsselt ein vom User angegebenes Wort)(Polybius)");
+            System.out.println("[6] Entschlüsseln (Entschlüsselt ein vom User angegebenes Wort)(Polybius)");
             System.out.println("[0] Beenden");
             int option = scanner.nextInt();
             scanner.nextLine();
@@ -64,23 +67,30 @@ public class Verwaltung {
                 System.out.println("Das entschlüsselte wort ist " + veginere.getKt());
 
 
-            }
-            if (option == 5) {
+            } else if (option == 5) {
                 System.out.println("Welches Wort soll Verschlüsselt werden?");
                 String optionString = scanner.nextLine();
                 polybius.setKt(optionString);
-
                 polybius.verschluesseln();
                 System.out.println("Das verschlüsselte Wort ist " + polybius.getGt());
+
+            } else if (option == 6) {
+                System.out.println("Welches Wort soll entschlüsselt werden?");
+                String optionString = scanner.nextLine();
+                polybius.setGt(optionString);
+                polybius.entschluesseln();
+                System.out.println("Das entschlüsselte wort ist " + polybius.getKt());
                 if (option == 0) {
                     break;
                 }
                 System.out.println();
+            } else if (option == 0) {
+                break;
             }
-
         }
-    }
-}
+                    System.out.println();
+                }
 
+            }
 
 
