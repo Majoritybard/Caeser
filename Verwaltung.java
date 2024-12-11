@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Verwaltung {
     private Scanner scanner;
+    private  Drehraster drehraster;
     private Caeser caeser;
     private Polybius polybius;
     private Veginere veginere;
@@ -15,6 +16,7 @@ public class Verwaltung {
         veginere = new Veginere();
         caeser = new Caeser();
         polybius = new Polybius();
+        drehraster = new Drehraster();
         scanner = new Scanner(System.in);
         while (true) {
             System.out.println("== HAUPTMENÜ ==");
@@ -68,11 +70,11 @@ public class Verwaltung {
 
 
             } else if (option == 5) {
-                System.out.println("Welches Wort soll Verschlüsselt werden?");
-                String optionString = scanner.nextLine();
-                polybius.setKt(optionString);
-                polybius.verschluesseln();
-                System.out.println("Das verschlüsselte Wort ist " + polybius.getGt());
+                    System.out.println("Welches Wort soll Verschlüsselt werden?");
+                    String optionString = scanner.nextLine();
+                    polybius.setKt(optionString);
+                    polybius.verschluesseln();
+                    System.out.println("Das verschlüsselte Wort ist " + polybius.getGt());
 
             } else if (option == 6) {
                 System.out.println("Welches Wort soll entschlüsselt werden?");
@@ -84,7 +86,17 @@ public class Verwaltung {
                     break;
                 }
                 System.out.println();
-            } else if (option == 0) {
+            }
+            else if (option == 7) {
+                System.out.println("Welches Wort soll Verschlüsselt werden?");
+                String optionString = scanner.nextLine();
+                drehraster.setKt(optionString);
+                System.out.println("Was ist der Schlüssel? (Entschlüsselt das Wort mit dem Schlüssel indem es im Aphabet nach links geht)");
+                option = scanner.nextInt();
+                drehraster.setS(option);
+                drehraster.verschluesseln();
+                System.out.println("Das verschlüsselte Wort ist " + drehraster.getGt());
+            }else if (option == 0) {
                 break;
             }
         }
